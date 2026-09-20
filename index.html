@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常用网址导航</title>
+<meta name="description" content="个人常用网址导航：搜索引擎、视频网站、工具网站、AI 网站、购物网站等分类，一键直达。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E5A6B'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%2367E8F9' stroke-width='5'/%3E%3Cpath d='M38 26 L28 36 L34 38 L30 46 L44 32 L37 31 Z' fill='%23F8FAFC'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#EDF1F7;
+  --surface:#FFFFFF;
+  --ink:#0F172A;
+  --muted:#5B6B84;
+  --line:#E2E9F3;
+  --hero1:#0A1B3C;
+  --hero2:#0F3D6E;
+  --hero3:#0C5C72;
+  --accent:#67E8F9;
+  --radius:16px;
+  --shadow:0 1px 2px rgba(15,23,42,.05), 0 8px 24px -12px rgba(15,23,42,.12);
+  --cat:#2563EB;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;color:#F8FAFC;
+  background:
+    radial-gradient(1100px 480px at 82% -10%, rgba(103,232,249,.16), transparent 60%),
+    radial-gradient(900px 420px at 8% 0%, rgba(56,130,246,.18), transparent 55%),
+    linear-gradient(140deg,var(--hero1) 0%,var(--hero2) 52%,var(--hero3) 100%);
+  padding:54px 0 74px;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.14) 1px, transparent 1px);
+  background-size:26px 26px;
+  opacity:.35;
+}
+.hero .container{position:relative;z-index:1}
+.hero-top{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  flex-wrap:wrap;margin-bottom:38px;
+}
+.clock{text-align:right}
+.clock-time{
+  font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;
+  font-size:34px;letter-spacing:1px;line-height:1.2;
+  font-variant-numeric:tabular-nums;
+}
+.clock-date{font-size:13px;color:rgba(248,250,252,.72);margin-top:2px}
+.greeting{
+  font-family:'Noto Serif SC','Songti SC',serif;font-weight:600;
+  font-size:20px;color:var(--accent);margin-bottom:6px;
+}
+.hero h1{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-weight:900;font-size:44px;letter-spacing:2px;line-height:1.25;
+}
+.hero-sub{margin-top:10px;font-size:15px;color:rgba(248,250,252,.8);max-width:520px}
+
+/* hero search */
+.search-box{
+  margin-top:34px;max-width:680px;
+  display:flex;background:rgba(255,255,255,.98);border-radius:14px;
+  padding:6px;box-shadow:0 18px 44px -16px rgba(2,10,28,.55);
+}
+.search-box select{
+  border:none;background:#EEF2F8;color:var(--ink);border-radius:9px;
+  padding:0 12px;font-size:14px;font-family:inherit;outline:none;cursor:pointer;
+  flex:0 0 auto;max-width:104px;
+}
+.search-box input{
+  flex:1;border:none;outline:none;padding:12px 14px;font-size:15px;
+  background:transparent;color:var(--ink);min-width:0;
+}
+.search-box input::placeholder{color:#9AA7BA}
+.search-box button{
+  border:none;cursor:pointer;border-radius:9px;padding:0 22px;
+  background:linear-gradient(135deg,#0E7C96,#0F3D6E);color:#fff;
+  font-size:15px;font-family:inherit;font-weight:500;letter-spacing:1px;
+  transition:filter .2s;flex:0 0 auto;
+}
+.search-box button:hover{filter:brightness(1.12)}
+
+/* ===== Sticky bar ===== */
+.sticky-bar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(237,241,247,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.bar-inner{display:flex;align-items:center;gap:14px;padding:12px 0;flex-wrap:wrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap;flex:1;min-width:0}
+.chip{
+  font-size:13px;padding:6px 14px;border-radius:999px;cursor:pointer;
+  background:var(--surface);border:1px solid var(--line);color:var(--muted);
+  transition:all .18s;white-space:nowrap;font-family:inherit;
+}
+.chip:hover{color:var(--ink);border-color:#C7D3E4;transform:translateY(-1px)}
+.chip .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.filter-wrap{position:relative;flex:0 0 auto}
+.filter-wrap svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:#8A98AE;pointer-events:none}
+.filter-input{
+  border:1px solid var(--line);background:var(--surface);border-radius:999px;
+  padding:8px 14px 8px 34px;font-size:13px;outline:none;width:210px;
+  font-family:inherit;color:var(--ink);transition:border-color .18s,width .18s;
+}
+.filter-input:focus{border-color:#7FA6C9;width:250px}
+.filter-input::placeholder{color:#9AA7BA}
+
+/* ===== Sections ===== */
+main{padding:40px 0 64px}
+.section{margin-bottom:46px}
+.sec-head{
+  display:flex;align-items:center;gap:10px;margin-bottom:18px;
+  padding-bottom:10px;border-bottom:1px solid var(--line);
+}
+.sec-icon{
+  width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+  background:color-mix(in srgb,var(--cat) 12%, #fff);color:var(--cat);flex:0 0 auto;
+}
+.sec-icon svg{width:17px;height:17px}
+.sec-title{font-family:'Noto Serif SC','Songti SC',serif;font-size:19px;font-weight:700;letter-spacing:1px}
+.sec-count{font-size:12px;color:var(--muted);background:#E7EDF5;padding:2px 9px;border-radius:999px;margin-left:2px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;display:flex;flex-direction:column;gap:9px;min-height:118px;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.card:hover{
+  transform:translateY(-3px);border-color:var(--cat);
+  box-shadow:0 14px 30px -14px rgba(15,23,42,.22);
+}
+.card-row{display:flex;align-items:center;gap:12px;min-width:0}
+.tile{
+  width:40px;height:40px;border-radius:11px;flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;
+  background:color-mix(in srgb,var(--cat) 13%, #fff);
+  color:var(--cat);font-weight:700;font-size:17px;
+  font-family:'Noto Serif SC','Songti SC',serif;
+}
+.card-meta{min-width:0;flex:1}
+.card-name{display:block;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-url{display:block;font-size:11.5px;color:#93A1B5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.card-desc{font-size:12.5px;color:var(--muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.section.is-empty{display:none}
+.empty-state{
+  display:none;text-align:center;padding:56px 20px;color:var(--muted);
+  background:var(--surface);border:1px dashed #C9D6E6;border-radius:var(--radius);
+}
+.empty-state.show{display:block}
+.empty-state svg{width:34px;height:34px;stroke:#B7C4D6;margin-bottom:10px}
+.empty-state p{font-size:14px}
+
+/* ===== Footer ===== */
+footer{
+  border-top:1px solid var(--line);background:var(--surface);
+  padding:26px 0;color:var(--muted);font-size:13px;
+}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.foot-inner strong{color:var(--ink);font-weight:600}
+
+/* back to top */
+.to-top{
+  position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:12px;
+  background:#12294F;color:#fff;border:none;cursor:pointer;opacity:0;pointer-events:none;
+  transform:translateY(10px);transition:all .25s;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 28px -10px rgba(10,27,60,.5);z-index:60;
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-top:hover{background:#0E5A6B}
+.to-top svg{width:19px;height:19px;stroke:#fff}
+
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  .hero{padding:40px 0 56px}
+  .hero h1{font-size:32px}
+  .clock-time{font-size:26px}
+  .hero-top{margin-bottom:26px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+  .card{padding:13px;min-height:0}
+  .card-desc{-webkit-line-clamp:1;font-size:13px}
+  .card-url{font-size:12px}
+  .search-box{flex-wrap:wrap}
+  .search-box select{max-width:88px}
+  .search-box button{padding:0 16px;font-size:16px;min-height:44px}
+  .search-box input{font-size:16px}
+  .chip{padding:8px 14px;min-height:44px;display:inline-flex;align-items:center}
+  .filter-input{width:170px;font-size:16px}
+  .filter-input:focus{width:200px}
+}
+@media (max-width:420px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .clock-time{font-size:22px}
+  .hero h1{font-size:27px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-top">
+      <div>
+        <div class="greeting" id="greeting">你好</div>
+        <h1>常用网址导航</h1>
+        <p class="hero-sub">收藏常用网站，一键直达。输入关键词即可通过所选引擎搜索。</p>
+      </div>
+      <div class="clock">
+        <div class="clock-time" id="clockTime">--:--:--</div>
+        <div class="clock-date" id="clockDate"></div>
+      </div>
+    </div>
+
+    <form class="search-box" id="searchForm" role="search" aria-label="搜索">
+      <select id="engine" aria-label="选择搜索引擎">
+        <option value="baidu">百度</option>
+        <option value="google">谷歌</option>
+        <option value="bing">Bing</option>
+        <option value="bingcn">必应</option>
+        <option value="zhihu">知乎</option>
+      </select>
+      <input id="searchInput" type="text" placeholder="输入关键词搜索…" autocomplete="off">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</header>
+
+<!-- ===== Sticky nav + filter ===== -->
+<nav class="sticky-bar" aria-label="分类导航">
+  <div class="container bar-inner">
+    <div class="chips" id="chips"></div>
+    <div class="filter-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input class="filter-input" id="filterInput" type="text" placeholder="筛选站点…" autocomplete="off">
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Sections ===== -->
+<main class="container" id="main">
+  <div class="empty-state" id="emptyState">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6"/></svg>
+    <p>没有匹配的站点，换个关键词试试</p>
+  </div>
+  <div id="sections"></div>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container foot-inner">
+    <div>共收录 <strong id="totalCount">0</strong> 个常用站点</div>
+    <div>站点列表内置在页面代码中，可自行增删维护</div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+"use strict";
+/* ===== 站点数据：可直接增删改 ===== */
+var CATS = [
+  {
+    id:"search", name:"搜索引擎", color:"#2563EB", icon:"search",
+    sites:[
+      {n:"百度",u:"https://www.baidu.com",d:"中文搜索首选"},
+      {n:"谷歌",u:"https://www.google.com",d:"全球最大搜索引擎"},
+      {n:"Bing",u:"https://www.bing.com",d:"微软全球搜索"},
+      {n:"必应中国",u:"https://cn.bing.com",d:"微软中文搜索"},
+      {n:"DuckDuckGo",u:"https://duckduckgo.com",d:"注重隐私的搜索"},
+      {n:"搜狗",u:"https://www.sogou.com",d:"综合搜索与输入法"},
+      {n:"360搜索",u:"https://www.so.com",d:"综合搜索引擎"},
+      {n:"头条搜索",u:"https://so.toutiao.com",d:"字节跳动搜索"}
+    ]
+  },
+  {
+    id:"video", name:"视频网站", color:"#E11D48", icon:"video",
+    sites:[
+      {n:"Bilibili",u:"https://www.bilibili.com",d:"弹幕视频社区"},
+      {n:"YouTube",u:"https://www.youtube.com",d:"全球最大视频平台"},
+      {n:"爱奇艺",u:"https://www.iqiyi.com",d:"影视综艺在线平台"},
+      {n:"腾讯视频",u:"https://v.qq.com",d:"影视剧集与综艺"},
+      {n:"优酷",u:"https://www.youku.com",d:"综合视频门户"},
+      {n:"芒果TV",u:"https://www.mgtv.com",d:"湖南卫视旗下视频平台"},
+      {n:"抖音",u:"https://www.douyin.com",d:"短视频平台"},
+      {n:"西瓜视频",u:"https://www.ixigua.com",d:"中长视频平台"}
+    ]
+  },
+  {
+    id:"tool", name:"工具网站", color:"#0D9488", icon:"tool",
+    sites:[
+      {n:"百度网盘",u:"https://pan.baidu.com",d:"云存储与文件分享"},
+      {n:"腾讯文档",u:"https://docs.qq.com",d:"在线协作文档"},
+      {n:"石墨文档",u:"https://shimo.im",d:"轻量在线文档"},
+      {n:"ProcessOn",u:"https://www.processon.com",d:"在线思维导图与流程图"},
+      {n:"Photopea",u:"https://www.photopea.com",d:"免费在线图片编辑"},
+      {n:"iLovePDF",u:"https://www.ilovepdf.com",d:"PDF 在线处理"},
+      {n:"DeepL",u:"https://www.deepl.com",d:"高质量翻译工具"},
+      {n:"有道翻译",u:"https://fanyi.youdao.com",d:"中英互译与词典"},
+      {n:"草料二维码",u:"https://cli.im",d:"二维码在线生成"},
+      {n:"天眼查",u:"https://www.tianyancha.com",d:"企业信息查询"}
+    ]
+  },
+  {
+    id:"ai", name:"AI 网站", color:"#7C3AED", icon:"ai",
+    sites:[
+      {n:"豆包",u:"https://www.doubao.com",d:"字节跳动 AI 助手"},
+      {n:"ChatGPT",u:"https://chat.openai.com",d:"OpenAI 对话助手"},
+      {n:"Claude",u:"https://claude.ai",d:"Anthropic AI 助手"},
+      {n:"Kimi",u:"https://kimi.moonshot.cn",d:"长文本 AI 助手"},
+      {n:"文心一言",u:"https://yiyan.baidu.com",d:"百度 AI 对话"},
+      {n:"通义千问",u:"https://tongyi.aliyun.com",d:"阿里 AI 助手"},
+      {n:"智谱清言",u:"https://chatglm.cn",d:"智谱 AI 对话"},
+      {n:"讯飞星火",u:"https://xinghuo.xfyun.cn",d:"讯飞 AI 助手"},
+      {n:"即梦",u:"https://jimeng.jianying.com",d:"AI 图片与视频创作"},
+      {n:"可灵",u:"https://klingai.com",d:"快手 AI 视频生成"}
+    ]
+  },
+  {
+    id:"shop", name:"购物网站", color:"#F97316", icon:"shop",
+    sites:[
+      {n:"淘宝",u:"https://www.taobao.com",d:"综合购物平台"},
+      {n:"天猫",u:"https://www.tmall.com",d:"品牌官方旗舰"},
+      {n:"京东",u:"https://www.jd.com",d:"自营电商"},
+      {n:"拼多多",u:"https://www.pinduoduo.com",d:"社交拼团电商"},
+      {n:"唯品会",u:"https://www.vip.com",d:"品牌特卖"},
+      {n:"苏宁易购",u:"https://www.suning.com",d:"家电与数码零售"},
+      {n:"亚马逊",u:"https://www.amazon.cn",d:"跨境电商"},
+      {n:"闲鱼",u:"https://www.goofish.com",d:"二手闲置交易"}
+    ]
+  },
+  {
+    id:"social", name:"社交社区", color:"#EC4899", icon:"social",
+    sites:[
+      {n:"微博",u:"https://weibo.com",d:"社交媒体平台"},
+      {n:"知乎",u:"https://www.zhihu.com",d:"高质量问答社区"},
+      {n:"小红书",u:"https://www.xiaohongshu.com",d:"生活方式社区"},
+      {n:"豆瓣",u:"https://www.douban.com",d:"书影音兴趣社区"},
+      {n:"QQ",u:"https://im.qq.com",d:"即时通讯"},
+      {n:"微信",u:"https://weixin.qq.com",d:"微信官网"}
+    ]
+  },
+  {
+    id:"study", name:"学习知识", color:"#16A34A", icon:"study",
+    sites:[
+      {n:"中国大学MOOC",u:"https://www.icourse163.org",d:"名校免费公开课"},
+      {n:"网易公开课",u:"https://open.163.com",d:"中外公开课视频"},
+      {n:"慕课网",u:"https://www.imooc.com",d:"IT 技能实战学习"},
+      {n:"掘金",u:"https://juejin.cn",d:"中文技术社区"},
+      {n:"Stack Overflow",u:"https://stackoverflow.com",d:"程序员问答社区"},
+      {n:"得到",u:"https://www.dedao.cn",d:"知识服务平台"}
+    ]
+  },
+  {
+    id:"news", name:"新闻资讯", color:"#F59E0B", icon:"news",
+    sites:[
+      {n:"今日头条",u:"https://www.toutiao.com",d:"个性化资讯推荐"},
+      {n:"腾讯新闻",u:"https://news.qq.com",d:"综合新闻资讯"},
+      {n:"澎湃新闻",u:"https://www.thepaper.cn",d:"深度新闻报道"},
+      {n:"36氪",u:"https://36kr.com",d:"科技创投资讯"},
+      {n:"虎嗅",u:"https://www.huxiu.com",d:"商业科技资讯"},
+      {n:"少数派",u:"https://sspai.com",d:"数字生活与效率指南"}
+    ]
+  },
+  {
+    id:"music", name:"音乐娱乐", color:"#6366F1", icon:"music",
+    sites:[
+      {n:"网易云音乐",u:"https://music.163.com",d:"音乐社区与歌单"},
+      {n:"QQ音乐",u:"https://y.qq.com",d:"海量正版曲库"},
+      {n:"酷狗音乐",u:"https://www.kugou.com",d:"音乐播放与下载"},
+      {n:"喜马拉雅",u:"https://www.ximalaya.com",d:"有声书与播客"}
+    ]
+  },
+  {
+    id:"life", name:"生活服务", color:"#0EA5E9", icon:"life",
+    sites:[
+      {n:"美团",u:"https://www.meituan.com",d:"本地生活服务"},
+      {n:"大众点评",u:"https://www.dianping.com",d:"美食与店铺点评"},
+      {n:"携程旅行",u:"https://www.ctrip.com",d:"机票酒店预订"},
+      {n:"12306",u:"https://www.12306.cn",d:"铁路购票官网"},
+      {n:"高德地图",u:"https://www.amap.com",d:"地图与导航"},
+      {n:"支付宝",u:"https://www.alipay.com",d:"支付与生活服务"}
+    ]
+  }
+];
+
+/* ===== 分类图标（内联 SVG） ===== */
+var ICONS = {
+  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>',
+  video:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="14" height="13" rx="2.5"/><path d="M16.5 10.5l5-2.5v8l-5-2.5"/></svg>',
+  tool:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.7-3.7z"/></svg>',
+  ai:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.8L18.6 9.6l-4.8 1.8L12 16.2l-1.8-4.8L5.4 9.6l4.8-1.8L12 3z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/></svg>',
+  shop:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-1.3 11.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8L4 8z"/><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10"/></svg>',
+  social:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3c-1.2 0-2.4-.2-3.4-.7L3 21l1.9-5.2a8.3 8.3 0 0 1-1.4-4.8A8.4 8.4 0 0 1 12 2.7a8.4 8.4 0 0 1 9 8.8z"/></svg>',
+  study:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 4.8 7 4 4 4v14c3 0 6 .8 8 2.5 2-1.7 5-2.5 8-2.5V4c-3 0-6 .8-8 2.5z"/><path d="M12 6.5v14"/></svg>',
+  news:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H5a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1z"/><path d="M17 8h3v9a2 2 0 0 1-2 2h-1"/><path d="M7 9h7M7 12h7M7 15h4"/></svg>',
+  music:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>',
+  life:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>'
+};
+
+/* ===== 搜索引擎跳转 ===== */
+var ENGINES = {
+  baidu:"https://www.baidu.com/s?wd=",
+  google:"https://www.google.com/search?q=",
+  bing:"https://www.bing.com/search?q=",
+  bingcn:"https://cn.bing.com/search?q=",
+  zhihu:"https://www.zhihu.com/search?type=content&q="
+};
+
+/* ===== 工具函数 ===== */
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function shortUrl(u){return u.replace(/^https?:\/\//,"").replace(/^www\./,"").replace(/\/$/,"")}
+
+/* ===== 渲染 ===== */
+var sectionsWrap = document.getElementById("sections");
+var chipsWrap = document.getElementById("chips");
+var total = 0;
+
+CATS.forEach(function(cat,ci){
+  total += cat.sites.length;
+
+  /* 分类导航 chip */
+  var chip = document.createElement("button");
+  chip.type = "button";
+  chip.className = "chip";
+  chip.setAttribute("aria-label","跳转到"+cat.name);
+  chip.innerHTML = '<span class="dot" style="background:'+cat.color+'"></span>'+esc(cat.name);
+  chip.addEventListener("click",function(){
+    document.getElementById("sec-"+cat.id).scrollIntoView({behavior:"smooth",block:"start"});
+  });
+  chipsWrap.appendChild(chip);
+
+  /* 分类区块 */
+  var sec = document.createElement("section");
+  sec.className = "section";
+  sec.id = "sec-"+cat.id;
+  sec.style.setProperty("--cat",cat.color);
+
+  var head = document.createElement("div");
+  head.className = "sec-head";
+  head.innerHTML =
+    '<div class="sec-icon">'+ICONS[cat.icon]+'</div>'+
+    '<h2 class="sec-title">'+esc(cat.name)+'</h2>'+
+    '<span class="sec-count">'+cat.sites.length+' 个</span>';
+  sec.appendChild(head);
+
+  var grid = document.createElement("div");
+  grid.className = "grid";
+
+  cat.sites.forEach(function(site){
+    var a = document.createElement("a");
+    a.className = "card";
+    a.href = site.u;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.setAttribute("data-name",site.n.toLowerCase());
+    a.setAttribute("data-desc",site.d.toLowerCase());
+    a.setAttribute("data-cat",cat.name);
+    a.innerHTML =
+      '<div class="card-row">'+
+        '<span class="tile">'+esc(site.n.charAt(0))+'</span>'+
+        '<span class="card-meta">'+
+          '<span class="card-name">'+esc(site.n)+'</span>'+
+          '<span class="card-url">'+esc(shortUrl(site.u))+'</span>'+
+        '</span>'+
+      '</div>'+
+      '<span class="card-desc">'+esc(site.d)+'</span>';
+    grid.appendChild(a);
+  });
+
+  sec.appendChild(grid);
+  sectionsWrap.appendChild(sec);
+});
+
+document.getElementById("totalCount").textContent = total;
+
+/* ===== 实时筛选 ===== */
+var filterInput = document.getElementById("filterInput");
+var emptyState = document.getElementById("emptyState");
+
+filterInput.addEventListener("input",function(){
+  var q = filterInput.value.trim().toLowerCase();
+  var anyVisible = false;
+
+  CATS.forEach(function(cat){
+    var sec = document.getElementById("sec-"+cat.id);
+    var cards = sec.querySelectorAll(".card");
+    var vis = 0;
+    cards.forEach(function(card){
+      var hit = !q ||
+        card.getAttribute("data-name").indexOf(q) > -1 ||
+        card.getAttribute("data-desc").indexOf(q) > -1 ||
+        card.getAttribute("data-cat").toLowerCase().indexOf(q) > -1;
+      card.style.display = hit ? "" : "none";
+      if(hit) vis++;
+    });
+    sec.classList.toggle("is-empty", vis === 0);
+    if(vis > 0) anyVisible = true;
+  });
+
+  emptyState.classList.toggle("show", !anyVisible);
+});
+
+/* "/" 快捷聚焦筛选框 */
+document.addEventListener("keydown",function(e){
+  var tag = document.activeElement && document.activeElement.tagName;
+  if(e.key === "/" && tag !== "INPUT" && tag !== "SELECT" && tag !== "TEXTAREA"){
+    e.preventDefault();
+    filterInput.focus();
+  }
+});
+
+/* ===== Hero 搜索 ===== */
+var searchForm = document.getElementById("searchForm");
+var engineSel = document.getElementById("engine");
+var searchInput = document.getElementById("searchInput");
+
+try{
+  var saved = localStorage.getItem("nav_engine");
+  if(saved && ENGINES[saved]) engineSel.value = saved;
+}catch(e){}
+
+engineSel.addEventListener("change",function(){
+  try{localStorage.setItem("nav_engine",engineSel.value)}catch(e){}
+});
+
+searchForm.addEventListener("submit",function(e){
+  e.preventDefault();
+  var kw = searchInput.value.trim();
+  if(!kw) { searchInput.focus(); return; }
+  window.open(ENGINES[engineSel.value] + encodeURIComponent(kw), "_blank", "noopener");
+});
+
+/* ===== 时钟与问候 ===== */
+var WEEK = ["日","一","二","三","四","五","六"];
+function pad(n){return n < 10 ? "0"+n : ""+n}
+
+function tick(){
+  var now = new Date();
+  var h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
+  document.getElementById("clockTime").textContent = pad(h)+":"+pad(m)+":"+pad(s);
+  document.getElementById("clockDate").textContent =
+    now.getFullYear()+" 年 "+(now.getMonth()+1)+" 月 "+now.getDate()+" 日 · 星期"+WEEK[now.getDay()];
+
+  var g;
+  if(h >= 5 && h < 11) g = "早上好";
+  else if(h >= 11 && h < 13) g = "中午好";
+  else if(h >= 13 && h < 18) g = "下午好";
+  else if(h >= 18 && h < 23) g = "晚上好";
+  else g = "夜深了";
+  document.getElementById("greeting").textContent = g+"，今天想去哪儿？";
+}
+tick();
+setInterval(tick,1000);
+
+/* ===== 回到顶部 ===== */
+var toTop = document.getElementById("toTop");
+window.addEventListener("scroll",function(){
+  toTop.classList.toggle("show", window.scrollY > 420);
+},{passive:true});
+toTop.addEventListener("click",function(){
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+</script>
+</body>
+</html>
